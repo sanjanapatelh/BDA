@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5f7ee5aea93b729af477aea2"},"Cust_id":1.0,"Acc_Bal":1202.0,"Acc_Type":"A"}
+{"_id":{"$oid":"5f7ee5aea93b729af477aea3"},"Cust_id":2.0,"Acc_Bal":12002.0,"Acc_Type":"Z"}
+{"_id":{"$oid":"5f7ee5aea93b729af477aea4"},"Cust_id":3.0,"Acc_Bal":12000.0,"Acc_Type":"Z"}
+{"_id":{"$oid":"5f7ee5aea93b729af477aea5"},"Cust_id":4.0,"Acc_Bal":1999.0,"Acc_Type":"Z"}
+{"_id":{"$oid":"5f7ee5aea93b729af477aea6"},"Cust_id":1.0,"Acc_Bal":1300.0,"Acc_Type":"Z"}
+{"_id":{"$oid":"5f7ee5aea93b729af477aea7"},"Cust_id":4.0,"Acc_Bal":20000.0,"Acc_Type":"A"}
