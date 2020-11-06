@@ -1,0 +1,30 @@
+#######1
+create keyspace employee with replication={
+   ...            ...    ... 'class':'SimpleStrategy',
+   ...            ...    ... 'replication_factor':1
+   ...            ...    ... };
+######2
+create table employee_info(emp_id int,emp_name text,designation text,date_of_join timestamp,salary int,dept_name text,primary key(emp_id,salary));
+#######3
+begin batch insert into employee_info(emp_id,emp_name,designation,date_of_join,salary,dept_name)values(121,'Rachana','rnddeveloper','2020-01-21',10000,'development'); insert into employee_info(emp_id,emp_name,designation,date_of_join,salary,dept_name)values(122,'Sanjana','rndblockchain','2020-01-21',20000,'blockchain'); insert into employee_info(emp_id,emp_name,designation,date_of_join,salary,dept_name)values(123,'Saumya','rndblockchain','2020-01-21',20000,'blockchain'); insert into employee_info(emp_id,emp_name,designation,date_of_join,salary,dept_name)values(124,'Swarna','rnddevelopment','2020-01-21',30000,'development');apply batch;
+########4
+update employee_info set emp_name='Rachana Gangadhar'where emp_id=121 and salary=10000;
+cqlsh:employee> update employee_info set dept_name='cybersecurity'where emp_id=121 and salary=10000;
+cqlsh:employee> select * from employee_info;
+############5
+ paging off;
+ cqlsh:employee> select * from employee_info where emp_id in (121,122,123,124) order by salary;
+
+#######6
+ alter table employee_info add projects list<text>;
+ ########7
+ cqlsh:employee> update employee_info set projects=['distributed firewall','malware detection'] where emp_id=121 and salary=10000;
+cqlsh:employee> update employee_info set projects=['crowd funding','metro system'] where emp_id=122 and salary=20000;
+cqlsh:employee> update employee_info set projects=['crowd funding','metro system'] where emp_id=123 and salary=20000;
+cqlsh:employee> update employee_info set projects=['online voting system','malware detection frontend'] where emp_id=124 and salary=30000;
+cqlsh:employee> select * from employee_info;
+##########8
+ cqlsh:employee> insert into employee_info(emp_id,emp_name,designation,date_of_join,salary,dept_name)values(127,'vrushank','rnddeveloper','2020-01-21',10000,'development')using ttl 30;
+ ####9
+ select * from employee_info;
+######this command is used to check ttl
